@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize"
-import {Table,Model,Column, PrimaryKey, IsEmail} from "sequelize-typescript"
+import {Table,Model,Column} from "sequelize-typescript"
 
 @Table({tableName:"users"})
 export class User extends Model{
