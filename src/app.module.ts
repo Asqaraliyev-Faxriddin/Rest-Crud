@@ -2,9 +2,8 @@ import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { User } from './models/user.model';
 import { UserModule } from './user/user.module.js';
-import { PostsController } from './posts/posts.controller';
-import { PostsService } from './posts/posts.service';
 import { PostsModule } from './posts/posts.module';
+import { Posts } from './models/post.model';
 
 @Module({
   imports: [SequelizeModule.forRoot({
@@ -16,13 +15,11 @@ import { PostsModule } from './posts/posts.module';
     host:"localhost",
     autoLoadModels:true,
     synchronize:true,
-    models:[User]
+    models:[User,Posts]
   }),
   UserModule,
   PostsModule
 ],
-  controllers: [PostsController],
-  providers: [PostsService],
  
 })
 
